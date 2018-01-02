@@ -466,7 +466,7 @@ if modeSwitch and int(ifhexo):
 		# print mdImagesPathdel
 		mdSimReplace = mdSimReplace.replace(mdImagesPathdel,'')
 		mdSimReplace = mdSimReplace.replace('</audio>',"</audio>\n")
-		mdSimReplace = mdSimReplace.replace("[TOC]\n\n---",'---')
+		mdSimReplace = mdSimReplace.replace("[TOC]\n\n\n---",'---')
 	file = open('temp.md', 'w')
 	file.write(mdSimReplace)
 	file.close( )
