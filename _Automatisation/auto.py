@@ -455,22 +455,23 @@ lostTarget=0
 if modeSwitch and int(ifhexo):
 	if postExiste:
 		os.remove(postPath)
-	keyCircle="<p align=\"center\">"
+	# keyCircle="<p align=\"center\">"
+	keyCircle="[TOC]\n\n---"
 	mdSimReplace = open(markdownPath,"r")
 	mdSimReplace = mdSimReplace.read()
 	post = mdSimReplace.find(keyCircle)
 	if post != -1:
-		mdSimReplace = mdSimReplace.replace(keyCircle,'')
+		mdSimReplace = mdSimReplace.replace(keyCircle,'---')
 		mdSimReplace = re.sub(r"{:height=\"\d+px\" width=\"\d+px\"}</p>", '' ,mdSimReplace)
 		mdSimReplace = mdSimReplace.replace('</p>','')
 		# print mdImagesPathdel
 		mdSimReplace = mdSimReplace.replace(mdImagesPathdel,'')
 		mdSimReplace = mdSimReplace.replace('</audio>',"</audio>\n")
-		mdSimReplace = mdSimReplace.replace("[TOC]\n\n\n---",'---')
-		mdSimReplace = mdSimReplace.replace("[TOC]",'---')
+		mdSimReplace = mdSimReplace.replace("<p align=\"center\">",'')
+		# mdSimReplace = mdSimReplace.replace("[TOC]\n\n---",'---')
 	file = open('temp.md', 'w')
 	file.write(mdSimReplace)
-	file.close()
+	file.close( )
 	
 	print "==== Simple replacement done, starting hint decode"
 	with open('temp.md','r') as mdFile:
