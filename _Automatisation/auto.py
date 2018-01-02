@@ -456,7 +456,7 @@ if modeSwitch and int(ifhexo):
 	if postExiste:
 		os.remove(postPath)
 	keyCircle="<p align=\"center\">"
-	mdSimReplace = open(markdownPath,"r+")
+	mdSimReplace = open(markdownPath,"r")
 	mdSimReplace = mdSimReplace.read()
 	post = mdSimReplace.find(keyCircle)
 	if post != -1:
@@ -467,7 +467,7 @@ if modeSwitch and int(ifhexo):
 		mdSimReplace = mdSimReplace.replace(mdImagesPathdel,'')
 		mdSimReplace = mdSimReplace.replace('</audio>',"</audio>\n")
 		mdSimReplace = mdSimReplace.replace("[TOC]\n\n---",'---')
-		file = open('temp.md', 'w')
+		file = open('temp.md', 'w+')
 		file.write(mdSimReplace)
 	file.close( )
 	
