@@ -505,7 +505,7 @@ if modeSwitch and int(ifhexo):
 				lostTarget=0
 			# print line
 			open(postPath, 'a+' ).write(line)
-	os.remove('temp.md')
+	# os.remove('temp.md')
 
 
 
