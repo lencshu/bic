@@ -467,12 +467,12 @@ if modeSwitch and int(ifhexo):
 		mdSimReplace = mdSimReplace.replace(mdImagesPathdel,'')
 		mdSimReplace = mdSimReplace.replace('</audio>',"</audio>\n")
 		mdSimReplace = mdSimReplace.replace("[TOC]\n\n---",'---')
-		file = open('temp.md', 'w+')
+		file = open('temp.md', 'w')
 		file.write(mdSimReplace)
 	file.close( )
 	
 	print "==== Simple replacement done, starting hint decode"
-	with open('temp.md') as mdFile:
+	with open('temp.md','r') as mdFile:
 		for line in mdFile:
 			videKey=pattern.search(line)
 			if "!!!" in line:
