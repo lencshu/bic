@@ -470,7 +470,7 @@ if modeSwitch and int(ifhexo):
 		mdSimReplace = mdSimReplace.replace("[TOC]",'---')
 	file = open('temp.md', 'w')
 	file.write(mdSimReplace)
-	file.close( )
+	file.close()
 	
 	print "==== Simple replacement done, starting hint decode"
 	with open('temp.md','r') as mdFile:
